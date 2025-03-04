@@ -19,7 +19,7 @@ public class PlayerCondition : MonoBehaviour
 
         if (hunger.curValue == 0f)
         {
-            health.Subtract(noHungerHealthDecay * Time.captureDeltaTime);
+            health.Subtract(noHungerHealthDecay * Time.deltaTime);
         }
 
         if(health.curValue ==0f)
@@ -35,8 +35,7 @@ public class PlayerCondition : MonoBehaviour
 
     public void Eat(float amount) 
     {
-        hunger.Add(amount); 
-    }
+        hunger.Add(amount); }
     public void Die()
     {
         Debug.Log("ав╬З╢ы");
