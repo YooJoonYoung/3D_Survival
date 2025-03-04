@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        Debug.DrawRay(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down,Color.red);
+        
     }
 
     private void LateUpdate()
@@ -67,11 +67,9 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        Debug.Log("JUmp+ "+IsGrounded());
         if (context.phase == InputActionPhase.Started && IsGrounded())
         {
-            _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
-            Debug.Log("test");
+            _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);       
         }
     }
 
